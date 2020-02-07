@@ -1,0 +1,4 @@
+/.idea
+/SuperMarket/out
+/SuperMarket/build
+/SuperMarket/test
