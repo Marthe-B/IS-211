@@ -17,7 +17,7 @@ public class Customer {
     public static final int MAX_PRODUCTS = 500;
     public static final int MIN_PRODUCTS = 1;
 
-    // customer will spend ranom amount of time between these values before
+    // customer will spend random amount of time between these values before
     // going to check out
     public static final int MAX_SHOP_TIME = 50;
     public static final int MIN_SHOP_TIME = 1;
@@ -43,4 +43,17 @@ public class Customer {
         shoppingDuration = EventSim.nextInt(MIN_SHOP_TIME, MAX_SHOP_TIME);
         endShoppingTime = beginShoppingTime + shoppingDuration;
     }
+
+    public int getBeginShoppingTime() {
+        return beginShoppingTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getShoppingDuration() {
+        return shoppingDuration;
+    }
+
 }

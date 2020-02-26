@@ -25,4 +25,14 @@ public class Checkout {
         this.shop = shop;
         this.name = "Checkout" + i;
     }
+
+    public void checkoutQue() {
+
+    }
+
+    //public int checkoutDuration(Customer customer, int numWares) {
+    //    int checkoutDuration = ((numWares * PROD_DURATION) + PAY_DURATION);
+    //    return checkoutDuration;
+    //}
+
 }
