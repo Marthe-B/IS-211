@@ -21,6 +21,7 @@ public class EndShoppingEvent extends Event {
 
     public EndShoppingEvent(Customer customer) {
         super(EventSim.getClock() + customer.shoppingDuration);
+        //super(customer.beginShoppingTime + customer.shoppingDuration);
         this.customer = customer;
     }
 
