@@ -30,9 +30,9 @@ public class Checkout {
 
     }
 
-    //public int checkoutDuration(Customer customer, int numWares) {
-    //    int checkoutDuration = ((numWares * PROD_DURATION) + PAY_DURATION);
-    //    return checkoutDuration;
-    //}
+    public int checkoutDuration(Customer customer, int numWares) {
+        int checkoutDuration = ((numWares * PROD_DURATION) + PAY_DURATION);
+        return checkoutDuration;
+    }
 
 }

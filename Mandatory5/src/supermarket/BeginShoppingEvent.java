@@ -27,4 +27,9 @@ public class BeginShoppingEvent extends Event {
     public Event happen() {
         return new PickWaresEvent(customer);
     }
+
+    @Override
+    public String toString() {
+        return "BeginShoppingEvent {Enter Time: " + customer.beginShoppingTime + " ,customer = " + customer.name;
+    }
 }
