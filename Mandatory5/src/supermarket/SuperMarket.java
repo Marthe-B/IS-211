@@ -46,6 +46,11 @@ public class SuperMarket {
         }
     }
 
+    public Checkout shortestQue() {
+        return checkouts[0];
+
+    }
+
 
     public void startSim() {
         EventSim sim = EventSim.getInstance();

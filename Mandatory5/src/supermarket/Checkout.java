@@ -5,6 +5,10 @@
  */
 package supermarket;
 
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 
 /**
  *
@@ -20,10 +24,27 @@ public class Checkout {
     SuperMarket shop;
     String name;
 
+    // que of customers
+    Queue<Customer> tillQue;
+
 
     public Checkout(SuperMarket shop, int i) {
         this.shop = shop;
         this.name = "Checkout" + i;
+
+        tillQue = new LinkedList<>();
+    }
+
+    public void enterQue(Customer c) {
+        tillQue.add(c);
+    }
+
+    public void exitQue(Customer c) {
+        tillQue.remove(c);
+    }
+
+    public int getQueLength(){
+        return tillQue.size();
     }
 
     public void checkoutQue() {

@@ -57,7 +57,7 @@ public class EventSim {
 
     public EventSim() {
         eventQueue = new PriorityQueue<>(new EventTimeComparator());
-        random = new Random(56);
+        random = new Random(38);
     }
 
 
