@@ -22,7 +22,7 @@ public class SuperMarket {
         supern.startSim();
     }
 
-    public static final int NUM_CHECKOUTS = 3;
+    public static final int NUM_CHECKOUTS = 2;
     public static final int NUM_CUSTOMERS = 3;
 
     Checkout[] checkouts;
@@ -46,6 +46,20 @@ public class SuperMarket {
         }
     }
 
+    public List getCustomers() {
+        return customers;
+    }
+
+    public int getAverage() {
+        int totalWait = 0;
+        for (Customer c : customers) {
+            totalWait += c.queueWaitDuration;
+            //System.out.println(totalWait);
+            //return totalWait;
+        }
+        return totalWait / customers.size();
+    }
+
     //Return a random till
     public Checkout shortestQue() {
         return checkouts[EventSim.nextInt(0, NUM_CHECKOUTS-1)];
@@ -58,5 +72,7 @@ public class SuperMarket {
         EventSim sim = EventSim.getInstance();
         sim.setup(init);
         sim.run();
+        System.out.println("Number of tills : " + NUM_CHECKOUTS +  " | Number f customers : " +  NUM_CUSTOMERS
+                + " | Average wait time : " + getAverage());
     }
 }
