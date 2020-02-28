@@ -23,7 +23,7 @@ public class SuperMarket {
     }
 
     public static final int NUM_CHECKOUTS = 1;
-    public static final int NUM_CUSTOMERS = 2;
+    public static final int NUM_CUSTOMERS = 3;
 
     Checkout[] checkouts;
     List<Customer> customers;

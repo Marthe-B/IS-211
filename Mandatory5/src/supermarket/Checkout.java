@@ -40,12 +40,25 @@ public class Checkout {
         tillQue.add(c);
     }
 
+    public int getGlobalWaitTime() {
+        int globalWait = 0;
+        if (!tillQue.isEmpty()) {
+            for (Customer c : tillQue) {
+                globalWait += c.checkoutDuration;
+                //System.out.println(globalWait);
+                //c.queueWaitDuration = globalWait;
+            }
+        }
+        return globalWait;
+    }
+
+
     public Customer exitQue() {
         return tillQue.poll();
     }
 
     public Event checkOutCustomer() {
-        return new EndShoppingEvent(exitQue());
+        return new EndShoppingEvent(exitQue(), getGlobalWaitTime());
     }
 
     //public void exitQue(Customer c) {

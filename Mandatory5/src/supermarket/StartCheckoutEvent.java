@@ -9,7 +9,11 @@ public class StartCheckoutEvent extends Event {
 
     public StartCheckoutEvent(Customer customer) {
         super(EventSim.getClock() + customer.checkoutDuration);
+        //super(customer.endShoppingTime);// + customer.checkoutDuration);
+        //super(EventSim.getClock());
         this.customer = customer;
+
+        //customer.exitQueTime = getTime();
 
         checkout = customer.shop.shortestQue();
 
@@ -22,6 +26,8 @@ public class StartCheckoutEvent extends Event {
         //checkout.exitQue(customer);
         //return new EndShoppingEvent(customer);
         //checkout.checkOutCustomer();
+
+
         return checkout.checkOutCustomer();
     }
 

@@ -19,7 +19,9 @@ public class QueForTillEvent extends Event {
 
     @Override
     public Event happen() {
+
         checkout.enterQue(customer);
+
         return new StartCheckoutEvent(customer);
         //return null;
     }

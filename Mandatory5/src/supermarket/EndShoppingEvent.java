@@ -19,11 +19,16 @@ public class EndShoppingEvent extends Event {
     Customer customer;
 
 
-    public EndShoppingEvent(Customer customer) {
-        super(EventSim.getClock()); //super(time) aka the time this event starts
+    public EndShoppingEvent(Customer customer, int globalWait) {
+        super(EventSim.getClock() + globalWait); //super(time) aka the time this event starts
+        //super(EventSim.getClock() + globalWait);
+        //super(customer.shoppingDuration + globalWait);
         //super(customer.beginShoppingTime + customer.shoppingDuration);
         this.customer = customer;
         customer.exitQueTime = getTime();
+        //customer.exitQueTime = getTime();
+        //customer.queueWaitDuration = globalWait;
+        customer.queueWaitDuration = customer.exitQueTime - customer.enterQueTime;
     }
 
 
@@ -40,7 +45,7 @@ public class EndShoppingEvent extends Event {
 
         //return "Customer : " + customer.name + " Leave shop at : " + getTime();
         //return "Customer : " + customer.name + " Queued for : " + ((getTime() - customer.enterQueTime) + customer.checkoutTime) + " Current time : " + EventSim.getClock();
-        return "Customer : " + customer.name + " Queued for : " + (customer.exitQueTime - customer.enterQueTime) + " Current time : " + EventSim.getClock();
+        return "Customer : " + customer.name + " Queued for : " + customer.queueWaitDuration;
     }
 
 
