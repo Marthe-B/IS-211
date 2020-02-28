@@ -22,7 +22,7 @@ public class SuperMarket {
         supern.startSim();
     }
 
-    public static final int NUM_CHECKOUTS = 1;
+    public static final int NUM_CHECKOUTS = 3;
     public static final int NUM_CUSTOMERS = 3;
 
     Checkout[] checkouts;
@@ -46,8 +46,10 @@ public class SuperMarket {
         }
     }
 
+    //Return a random till
     public Checkout shortestQue() {
-        return checkouts[0];
+        return checkouts[EventSim.nextInt(0, NUM_CHECKOUTS-1)];
+        //return checkouts[0];
 
     }
 

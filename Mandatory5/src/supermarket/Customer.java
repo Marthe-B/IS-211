@@ -43,6 +43,8 @@ public class Customer {
     int nextInLineTime;
     int exitQueTime;
 
+    int tillNumber;
+
 
     public Customer(SuperMarket shop, int i) {
         this.shop = shop;

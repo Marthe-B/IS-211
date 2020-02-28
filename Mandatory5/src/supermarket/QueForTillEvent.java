@@ -22,7 +22,7 @@ public class QueForTillEvent extends Event {
 
         checkout.enterQue(customer);
 
-        return new StartCheckoutEvent(customer);
+        return new StartCheckoutEvent(customer, checkout);
         //return null;
     }
 
