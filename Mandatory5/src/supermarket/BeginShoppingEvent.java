@@ -32,7 +32,7 @@ public class BeginShoppingEvent extends Event {
     public String toString() {
         //return "BeginShoppingEvent {Enter Time: " + customer.beginShoppingTime + " ,customer = " + customer.name;
 
-        //return "Customer : " + customer.name + " Enter Shop at : " + customer.beginShoppingTime;
-        return null;
+        return "Customer : " + customer.name + " Enter Shop at : " + customer.beginShoppingTime + " Shopped for " + customer.shoppingDuration;
+        //return null;
     }
 }

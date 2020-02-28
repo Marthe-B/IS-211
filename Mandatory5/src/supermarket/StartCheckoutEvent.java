@@ -8,26 +8,28 @@ public class StartCheckoutEvent extends Event {
     Checkout checkout;
 
     public StartCheckoutEvent(Customer customer) {
-        super(EventSim.getClock()+ customer.checkoutDuration);
+        super(EventSim.getClock() + customer.checkoutDuration);
         this.customer = customer;
 
         checkout = customer.shop.shortestQue();
 
-        customer.nextInLineTime = getTime();
+        //customer.nextInLineTime = getTime();
 
     }
 
     @Override
     public Event happen() {
-        checkout.exitQue(customer);
-        return new EndShoppingEvent(customer);
+        //checkout.exitQue(customer);
+        //return new EndShoppingEvent(customer);
+        //checkout.checkOutCustomer();
+        return checkout.checkOutCustomer();
     }
 
     @Override
     public String toString() {
         //return "QueForTillEvent {Start Que at : " + getTime() + " ,customer = " + customer.name
         //        + " ,Queued for : " + customer.checkoutDuration + '}';
-        return "Customer : " + customer.name + " Exits que at : " + customer.nextInLineTime + " Current time : " + EventSim.getClock();
+        return "Customer : " + customer.name + " Exits que at : " + getTime() + " Current time : " + EventSim.getClock();
     }
 
 }

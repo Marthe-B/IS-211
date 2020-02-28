@@ -13,7 +13,6 @@ public class QueForTillEvent extends Event {
 
         checkout = customer.shop.shortestQue();
 
-
         customer.enterQueTime = getTime();
 
     }
@@ -22,6 +21,7 @@ public class QueForTillEvent extends Event {
     public Event happen() {
         checkout.enterQue(customer);
         return new StartCheckoutEvent(customer);
+        //return null;
     }
 
     @Override

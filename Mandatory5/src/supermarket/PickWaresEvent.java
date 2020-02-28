@@ -23,7 +23,7 @@ public class PickWaresEvent extends Event {
         //        + " ,End shopping at : " + (getTime() + customer.shoppingDuration)
         //        + " ,number of products : " + customer.numProducts + '}';
 
-        //return "Customer : " + customer.name + " Products : " + customer.numProducts;
-        return null;
+        return "Customer : " + customer.name + " Products : " + customer.numProducts;
+        //return null;
     }
 }

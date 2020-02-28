@@ -8,6 +8,7 @@ package supermarket;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import eventsim.Event;
 
 
 /**
@@ -39,9 +40,17 @@ public class Checkout {
         tillQue.add(c);
     }
 
-    public void exitQue(Customer c) {
-        tillQue.remove(c);
+    public Customer exitQue() {
+        return tillQue.poll();
     }
+
+    public Event checkOutCustomer() {
+        return new EndShoppingEvent(exitQue());
+    }
+
+    //public void exitQue(Customer c) {
+    //    tillQue.remove(c);
+    //}
 
     public int getQueLength(){
         return tillQue.size();
