@@ -24,7 +24,7 @@ public class Customer {
     public static final int MIN_SHOP_TIME = 1;
 
     // customer will arrive at random intervals
-    public static final int MAX_DELAY_ENTER = 10;
+    public static final int MAX_DELAY_ENTER = 20;
     public static final int MIN_DELAY_ENTER = 1;
 
     SuperMarket shop;

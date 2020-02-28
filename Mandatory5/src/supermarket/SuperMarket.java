@@ -22,8 +22,8 @@ public class SuperMarket {
         supern.startSim();
     }
 
-    public static final int NUM_CHECKOUTS = 2;
-    public static final int NUM_CUSTOMERS = 3;
+    public static final int NUM_CHECKOUTS = 3;
+    public static final int NUM_CUSTOMERS = 40;
 
     Checkout[] checkouts;
     List<Customer> customers;
@@ -72,7 +72,7 @@ public class SuperMarket {
         EventSim sim = EventSim.getInstance();
         sim.setup(init);
         sim.run();
-        System.out.println("Number of tills : " + NUM_CHECKOUTS +  " | Number f customers : " +  NUM_CUSTOMERS
+        System.out.println("Number of tills : " + NUM_CHECKOUTS +  " | Number of customers : " +  NUM_CUSTOMERS
                 + " | Average wait time : " + getAverage());
     }
 }
